@@ -2,8 +2,8 @@ let amigos = [];
 
 
 function adicionarAmigo() {
-    let inputNome = document.getElementById("amigo");
-    let nome = inputNome.value.trim(); 
+    let nomeAmigo = document.getElementById("amigo");
+    let nome = nomeAmigo.value.trim(); 
 
    
     if (!nome) {
@@ -15,7 +15,7 @@ function adicionarAmigo() {
     amigos.push(nome);
 
     
-    inputNome.value = "";
+    nomeAmigo.value = "";
 
     
     atualizarLista();
@@ -23,16 +23,16 @@ function adicionarAmigo() {
 
 
 function atualizarLista() {
-    let lista = document.getElementById("listaAmigos");
+    let listaAmigos = document.getElementById("listaAmigos");
 
    
-    lista.innerHTML = "";
+    listaAmigos.innerHTML = "";
 
  
     amigos.forEach(nome => {
         let item = document.createElement("li");
         item.textContent = nome;
-        lista.appendChild(item);
+        listaAmigos.appendChild(item);
     });
 }
 
@@ -40,7 +40,7 @@ function atualizarLista() {
 function sortearAmigo() {
     
     if (amigos.length === 0) {
-        alert("A lista de amigos está vazia. Adicione pelo menos um nome antes de sortear.");
+        alert("Lista Vazia. Adicione pelo menos um nome antes de sortear.");
         return;
     }
 
